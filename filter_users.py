@@ -1,6 +1,10 @@
 import json
 
 def filter_users_by_name():
+    '''
+    Asking for input (name) from user to search for this name.
+    If name is found, print the user(s) with this name.
+    '''
     name_to_search = input("Enter a name to filter users: ").strip()
 
     with open("users.json", "r") as file:
@@ -12,6 +16,10 @@ def filter_users_by_name():
 
 
 def filter_users_by_age():
+    '''
+    Asking for input (age) from user to search for this age.
+    If age is found, print the user(s) with this age.
+    '''
     try:
         age_to_search = int(input("Enter an age to filter users: "))
     except ValueError:
@@ -26,11 +34,11 @@ def filter_users_by_age():
         print(user)
 
 def filter_users_by_email():
-    try:
-        mail_to_search = input("Enter an email to filter users: ").strip()
-    except ValueError:
-        print("Invalid input. Please enter an email.")
-        return
+    '''
+    Asking for input (email) from user to search for this email.
+    If email is found, print the user(s) with this email.
+    '''
+    mail_to_search = input("Enter an email to filter users: ").strip()
 
     with open("users.json", "r") as file:
         users = json.load(file)
